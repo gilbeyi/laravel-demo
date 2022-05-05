@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SingleAction;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users/{name}', function($name) {
+Route::get('/users/{name}', function($name) {
     return view('users', ['name'=> $name]);
 });
+
+Route::get('/single/action', SingleAction::class);
